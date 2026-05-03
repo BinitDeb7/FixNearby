@@ -1,92 +1,143 @@
-import { Search, CalendarCheck, Smile } from "lucide-react";
+import { Link } from 'react-router-dom';
 
-const steps = [
-  {
-    id: 1,
-    title: "Search",
-    description:
-      "Explore verified professionals near you based on ratings, skills, and availability.",
-    icon: Search,
-    color: "blue",
-  },
-  {
-    id: 2,
-    title: "Book",
-    description:
-      "Choose a convenient time and confirm your booking in just a few clicks.",
-    icon: CalendarCheck,
-    color: "green",
-  },
-  {
-    id: 3,
-    title: "Relax",
-    description:
-      "Sit back while experienced professionals complete your task hassle-free.",
-    icon: Smile,
-    color: "yellow",
-  },
-];
-
-const colorClasses = {
-  blue: "bg-blue-100 text-blue-600",
-  green: "bg-green-100 text-green-600",
-  yellow: "bg-yellow-100 text-yellow-600",
-};
-
-const HowItWorks = () => {
+const Home = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-gray-900">
-            How It Works
-          </h2>
-          <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
-            Getting help is simple, fast, and reliable. Just follow these easy steps.
-          </p>
-        </div>
+    <div className="bg-white">
+      
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+          <div className="text-center">
+            
+            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl leading-tight">
+              <span className="block">Find Reliable Workers</span>
+              <span className="block text-blue-600">In Your Neighborhood</span>
+            </h1>
 
-        {/* Steps */}
-        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-10">
-          
-          {/* Connector Line (Desktop only) */}
-          <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 z-0"></div>
+            <p className="mt-4 max-w-2xl mx-auto text-base text-gray-500 sm:text-lg md:text-xl">
+              FixNearby connects you with trusted electricians, plumbers, carpenters, and more. Fast, secure, and hassle-free.
+            </p>
 
-          {steps.map((step) => {
-            const Icon = step.icon;
-            return (
-              <div
-                key={step.id}
-                className="relative z-10 group p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 text-center"
+            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+              
+              <Link
+                to="/services"
+                className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 shadow-md hover:shadow-lg transition"
               >
-                {/* Icon */}
-                <div
-                  className={`w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full ${colorClasses[step.color]} group-hover:scale-110 transition`}
-                >
-                  <Icon size={28} />
-                </div>
+                Browse Services
+              </Link>
 
-                {/* Step Number */}
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-sm px-3 py-1 rounded-full shadow">
-                  {step.id}
-                </div>
+              <Link
+                to="/register"
+                className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-lg text-blue-600 bg-white border border-gray-200 hover:bg-gray-50 shadow-sm hover:shadow-md transition"
+              >
+                Join as a Worker
+              </Link>
 
-                {/* Content */}
-                <h3 className="text-xl font-semibold mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-gray-500">
-                  {step.description}
-                </p>
-              </div>
-            );
-          })}
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+
+      {/* How it Works Section */}
+      <div className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-extrabold text-gray-900">
+              How It Works
+            </h2>
+            <p className="mt-4 text-lg text-gray-500">
+              Get your tasks done in three simple steps.
+            </p>
+          </div>
+
+          <div className="relative grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+            
+            {/* Connector Line */}
+            <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200"></div>
+
+            {/* Step 1 */}
+            <div className="relative p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition group">
+              
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white text-sm px-3 py-1 rounded-full shadow">
+                1
+              </div>
+
+              <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-5 text-lg font-bold group-hover:scale-110 transition">
+                1
+              </div>
+
+              <h3 className="text-xl font-semibold mb-2">Search</h3>
+              <p className="text-gray-500">
+                Find the right professional based on reviews, skills, and proximity.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition group">
+              
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white text-sm px-3 py-1 rounded-full shadow">
+                2
+              </div>
+
+              <div className="w-14 h-14 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-5 text-lg font-bold group-hover:scale-110 transition">
+                2
+              </div>
+
+              <h3 className="text-xl font-semibold mb-2">Book</h3>
+              <p className="text-gray-500">
+                Schedule an appointment that fits your busy life instantly.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition group">
+              
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white text-sm px-3 py-1 rounded-full shadow">
+                3
+              </div>
+
+              <div className="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-5 text-lg font-bold group-hover:scale-110 transition">
+                3
+              </div>
+
+              <h3 className="text-xl font-semibold mb-2">Relax</h3>
+              <p className="text-gray-500">
+                Let the expert handle the job while you enjoy peace of mind.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* Popular Categories */}
+      <div className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <h2 className="text-4xl font-extrabold text-gray-900 mb-10 text-center">
+            Popular Categories
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {['Electrician', 'Plumber', 'Carpenter', 'Cleaning', 'Painting', 'AC Repair', 'Pest Control', 'Moving'].map((category, idx) => (
+              
+              <Link
+                key={idx}
+                to="/services"
+                className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center hover:border-blue-500 hover:text-blue-600 hover:shadow-md transition"
+              >
+                <span className="font-medium">{category}</span>
+              </Link>
+
+            ))}
+          </div>
+        </div>
+      </div>
+
+    </div>
   );
 };
 
-export default HowItWorks;
+export default Home;
